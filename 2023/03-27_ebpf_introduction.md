@@ -61,11 +61,11 @@ Overall, eBPF is a powerful and flexible technology for customizing the behavior
 
 ### Architecture
 
-![eBPF_architecture](../imgs/03-27_epub_solution.png)
+![eBPF_architecture](../imgs/03-27_ebpf_solution.png)
 
-![ebpf_solution](../imgs/03-27_epub_architecture.png)
+![ebpf_solution](../imgs/03-27_ebpf_architecture.png)
 
-![ebpf_sequence](../imgs/03-27_epub_sequence.png)
+![ebpf_sequence](../imgs/03-27_ebpf_sequence.png)
 
 
 
@@ -133,7 +133,7 @@ Env : MacBook OS, with docker installed
    ```
 
 ​		rerun the step from 2 - 3, u can see the only events belong to this thread
-![succ_result](../imgs/03-27_epub_example_succ.png)
+![succ_result](../imgs/03-27_ebpf_example_succ.png)
 
 
 

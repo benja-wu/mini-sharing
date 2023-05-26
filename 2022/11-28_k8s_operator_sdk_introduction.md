@@ -259,8 +259,8 @@ func (r *CoolxReconciler) SetupWithManager(mgr ctrl.Manager) error {
 
 ```bash 
 ➜  crds  make run                          
-/Users/yiheng.wu/programmer/github/crds/bin/controller-gen rbac:roleName=manager-role crd webhook paths="./..." output:crd:artifacts:config=config/crd/bases
-/Users/yiheng.wu/programmer/github/crds/bin/controller-gen object:headerFile="hack/boilerplate.go.txt" paths="./..."
+/Users/benjamin/programmer/crds/bin/controller-gen rbac:roleName=manager-role crd webhook paths="./..." output:crd:artifacts:config=config/crd/bases
+/Users/benjamin/programmer/crds/bin/controller-gen object:headerFile="hack/boilerplate.go.txt" paths="./..."
 go fmt ./...
 go vet ./...
 go run ./main.go

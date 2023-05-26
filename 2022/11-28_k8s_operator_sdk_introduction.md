@@ -2,57 +2,66 @@
 
 * SaaS products run in the cloud environment nowadays. The K8s is a winner in container orchestration systems. 
 * The main pattern of K8s is a level-triggered loop for making sure everything inside keeps aligned with the desired state
-* K8s is focusing on container orchestration, automation and cloud native deployment patterns. It has many concepts inside. Developers want to extend K8s for their own business domain requirements with the native K8s capacity.   
+* K8s focuses on container orchestration, automation, and cloud-native deployment patterns. It has many concepts inside. Developers want to extend K8s for their business domain requirements with the native K8s capacity.
 
 
 
 ## Why do we need it?
 
-* The focusness of K8s also limits and restricts the set of commands and operations that are exposed through K8s APIs. 
+* The focusness of K8s also limits and restricts the set of commands and operations that are exposed through K8s APIs.
 * The special user cases must not invade the infraction codes.  
 
-* So K8s provide a standard and clean method for extension powered by K8s’ existing capabilities. 
+* So K8s provide a standard and clean method for extension powered by K8s’ existing capabilities.
 
 
 
-## User cases 
+## User cases
 
-Customize CICD pipeline, combining the K8s deployment capabilities, and extends it with canary deployment
-Reusing K8s concepts for achieve service mesh patterns 
-Reusing K8s stateful set concepts to achieve ETCD cluster 
+1. Customize the CICD pipeline, combining the K8s deployment capabilities, and extends it with canary deployment
+
+2. Reusing K8s concepts to achieve service mesh patterns
+
+3. Reusing K8s stateful set concepts to achieve ETCD cluster
+
+   
 
 
 ## What’s the operator?
 
-* Operators are software extensions that use customer resource to manage applications and their components
+* Operators are software extensions that use customer resources to manage applications and their components
 
-* The operator is not an actual running component or resource stored inside K8s. It’s a guideline and abstraction of software patterns in K9s context. It consists of one dedicated controller.
+* The operator is not an actual running component or resource stored inside K8s. It’s a guideline and abstraction of software patterns in the K8s context. It consists of one dedicated controller.
 
 
 
-## Architecture 
+## Architecture
 
 ![operator_png](../imgs/22_11-28-operator-architecture.png)
 
 ### Components
 1. CRD: The CustomResourceDefinition API resource allows you to define custom resources. Defining a CRD object creates a new custom resource with a name and schema that you specify. The Kubernetes API serves and handles the storage of your custom resource. The name of a CRD object must be a valid DNS subdomain name.
+   
 
-2. Customer Controller: the orreponding controller for responsing the customer resources' modification and status. 
-
+2. Customer Controller: the orreponding controller for responsing the customer resources' modification and status.
+   
+   
 3. CR: Custom resources are extensions of the Kubernetes API. This page discusses when to add a custom resource to your Kubernetes cluster and when to use a standalone service. It describes the two methods for adding custom resources and how to choose between them.
 
 
 
  
 
-## How to develop it? 
+## How to develop it?
 
-pre-requirements： 
-1. docker is running 
-2. K8s cluster is running 
-3. Env $GOPATH is set
+Env: MacBook
 
-### 1. Pull up the minikub and K8s cluster 
+Pre-requirements：
+
+1. docker is running
+2. minikube is installed
+   
+
+### 1. Pull up the minikub and K8s cluster
 
 ``` bash
 ➜  crds minikube start init
@@ -61,7 +70,7 @@ pre-requirements：
 
 ### 2.Using init command to generate case docs
 
-* create one direcotry for your CRD controller dir , let's make it at `/Users/benjamin/programmer/crds`
+* create one directory for your CRD controller dir , let's make it at `/Users/benjamin/programmer/crds`
 
 ```bash
 ➜  crds git clone https://github.com/operator-framework/operator-sdk
@@ -75,7 +84,7 @@ pre-requirements：
 
 ### 3.Create the desired controller with your type
 
-* create the new CRD with names `Coolx` 
+* create the new CRD with the name `Coolx`
 * install the corresponding YAML, including RBAC, NS, CRD and so on. 
 
 ```bash
@@ -107,14 +116,14 @@ hellos.my.domain        2023-05-26T11:17:57Z
 
 ```
 
-we can see the new added CRDs, which is named with `coolxes.mydomainx.com`  (hellos.my.domain is the original deom CRD in the repo )
+we can see the new added CRDs, which is named with `coolxes.mydomainx.com`  (`hellos.my.domain` is the original demo CRD in the repo )
 
 
 
 ### 4. Adding the logic of new kind in the controller
 
-* Adding our new added CRD's controller logic: **once created the dedicated CRD, creating one Pod for it if not exist**
-* The pod is running with `busybox` image 
+* Adding our newly added CRD's controller logic: **once created the dedicated CRD, create one Pod for it if not exist**
+* The pod is running with the`busybox` image 
 * the controller's golang code is in `/Users/benjamin/programmer/crds/controllers/coolx_controller.go` 
 
 ```go
@@ -251,7 +260,7 @@ func (r *CoolxReconciler) SetupWithManager(mgr ctrl.Manager) error {
 
 
 
-* the logic above is listening the customer resource, checking the corresponding Pod is exist or not. If not present, then creating an Pod with busybox image. 
+* the logic above is listening the customer resource, checking the corresponding Pod is exist or not. If not present, then creating an Pod with busybox image.
 
 
 
@@ -282,7 +291,7 @@ go run ./main.go
 
 ### 6. Apply the CRD for testing
 
-* Create one new added type object in K8s 
+* Create one new added custom resource object in K8s 
 
 ```bash
 ➜  crds k apply -f config/samples/_v1alpha1_coolx.yaml 
@@ -291,7 +300,7 @@ coolx.mydomainx.com/coolx-sample created
 
 ```
 
-* we can notice the log in controller's terminal output 
+* we can see the corresponding log in the terminal output 
 
 ```bash
 
@@ -302,7 +311,7 @@ coolx.mydomainx.com/coolx-sample created
 
 ```
 
-* get Pod in default NS, then we can see the new created Pod
+* get Pod in default NS, yes, the Pod binding to the crd is created
 
 ```bash
 ➜  crds k get pods
@@ -317,8 +326,8 @@ coolx-sample-pod   1/1     Running   0          111s
 
 ## Take away
 
-1. K8s uses an operator pattern for extending its capacity. 
-2. Using operator-sdk can generate code framework 
+1. K8s uses an operator pattern for extending its capacity.
+2. Using operator-sdk simplifies our K8s operator development
 
 
 

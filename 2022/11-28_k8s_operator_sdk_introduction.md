@@ -36,7 +36,7 @@
 
 ## Architecture
 
-![operator_png](../imgs/22_11-28-operator-architecture.png)
+![operator_png](../imgs/22_11-28_operator-architecture.png)
 
 ### Components
 1. CRD: The CustomResourceDefinition API resource allows you to define custom resources. Defining a CRD object creates a new custom resource with a name and schema that you specify. The Kubernetes API serves and handles the storage of your custom resource. The name of a CRD object must be a valid DNS subdomain name.

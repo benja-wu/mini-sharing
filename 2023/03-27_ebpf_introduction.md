@@ -137,7 +137,7 @@ Env : MacBook OS, with docker installed
 
 
 
-## Take away
+## Takeaways 
 
 1. In the traffic governance scenario，eBPF solutions will be the future. 
 

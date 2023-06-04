@@ -16,14 +16,14 @@ Going back in time ： cgroup
 
 ## User cases 
 
-| Company   | Product                    | Usage                                                        |
-| --------- | -------------------------- | ------------------------------------------------------------ |
-| Amazon    | Amazon EC2                 | K8s manage clusters for Amazon EC2, compute instances as well as run containers on these instances using process of deployment, maintenance, and scaling |
-| Microsoft | Azure Kubernetes Services  | AKS is a completely managed service the enables Kubernetes in Azure, without having to manage Kubernetes clusters separately. |
-| Apache    | Apache spark               | Spark creates its own driver which runs within the Kubernetes Pod. The driver then creates executors that also run within Kubernetes pods, connections them, and then executes the application code |
+| Company   | Product                    | Usage                                                                                                                                                                                                                                        |
+| --------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Amazon    | Amazon EC2                 | K8s manage clusters for Amazon EC2, compute instances as well as run containers on these instances using process of deployment, maintenance, and scaling                                                                                     |
+| Microsoft | Azure Kubernetes Services  | AKS is a completely managed service the enables Kubernetes in Azure, without having to manage Kubernetes clusters separately.                                                                                                                |
+| Apache    | Apache spark               | Spark creates its own driver which runs within the Kubernetes Pod. The driver then creates executors that also run within Kubernetes pods, connections them, and then executes the application code                                          |
 | Bloomberg | Bloomberg’s early adoption | Kubernetes has enabled them to work on a PaaS layer which gives the developers the right level of abstraction to work with. The major objective for Bloomberg was to efficiently utilize the existing hardware they had already invested in. |
-| Google    | Kubernetes Engine          | Providing automated container orchestration, Kubernetes improves a Company’s reliability and reduces the time and effort of a resource. |
-| Nintendo  | PokemonGo                  | The game had more than 500 million downloads and more than 20 million active users. GKE helps the company to not only serve, by allowing Niantic to improve their user’s experience but also add newer features to the application. |
+| Google    | Kubernetes Engine          | Providing automated container orchestration, Kubernetes improves a Company’s reliability and reduces the time and effort of a resource.                                                                                                      |
+| Nintendo  | PokemonGo                  | The game had more than 500 million downloads and more than 20 million active users. GKE helps the company to not only serve, by allowing Niantic to improve their user’s experience but also add newer features to the application.          |
 
 
 
@@ -172,15 +172,15 @@ volumes:
 
 
 
-|      | Docker swarm                                                 | Kubernetes                                                   |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Pros | Built for use with the Docker engine                         | Battle-tested by big players like Google and IBM. Runs on most operating systems. |
-|      | Easy to install and set up for Docker environment            | Largest adoption in the market                               |
-|      | Uses a filtering and scheduling system to provide intelligent node selection, allowing you to pick the optimal nodes in a cluster for container deployment | Unified set of APIs and strong guarantees about the cluster state |
-|      | Smoothly integrates with Docker tools like Docker Compose and Docker CLI (uses the same command line interface (CLI) as Docker Engine) | Key functionalities include service discovery, ingress and load balancing, self-healing, storage orchestration, horizontal scalability, automated rollouts and rollbacks |
-| Cons | Limited customizations and extensions                        | Management of Kubernetes master takes specialized knowledges |
-|      | Less functionality-rich than Kubernetes                      | Too heavyweight for individual developers to set up for simplistic apps and infrequent deployment |
-|      | No easy way to separate Dev-Test-Prod workloads in DevOps pipeline | Often need additional tools (e.g., kubectl CLI), services, continuous integration/continuous deployment (CI/CD) workflows and other DevOps practices to fully manage access, identity, governance and security |
+|      | Docker swarm                                                                                                                                               | Kubernetes                                                                                                                                                                                                     |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pros | Built for use with the Docker engine                                                                                                                       | Battle-tested by big players like Google and IBM. Runs on most operating systems.                                                                                                                              |
+|      | Easy to install and set up for Docker environment                                                                                                          | Largest adoption in the market                                                                                                                                                                                 |
+|      | Uses a filtering and scheduling system to provide intelligent node selection, allowing you to pick the optimal nodes in a cluster for container deployment | Unified set of APIs and strong guarantees about the cluster state                                                                                                                                              |
+|      | Smoothly integrates with Docker tools like Docker Compose and Docker CLI (uses the same command line interface (CLI) as Docker Engine)                     | Key functionalities include service discovery, ingress and load balancing, self-healing, storage orchestration, horizontal scalability, automated rollouts and rollbacks                                       |
+| Cons | Limited customizations and extensions                                                                                                                      | Management of Kubernetes master takes specialized knowledges                                                                                                                                                   |
+|      | Less functionality-rich than Kubernetes                                                                                                                    | Too heavyweight for individual developers to set up for simplistic apps and infrequent deployment                                                                                                              |
+|      | No easy way to separate Dev-Test-Prod workloads in DevOps pipeline                                                                                         | Often need additional tools (e.g., kubectl CLI), services, continuous integration/continuous deployment (CI/CD) workflows and other DevOps practices to fully manage access, identity, governance and security |
 
 
 
@@ -198,7 +198,7 @@ Follow the official tutorials in Kubernetets.io https://kubernetes.io/docs/tutor
 
 
 
-## Take away
+## Takeaways 
 1. K8s a automating deploying, scaling containerized based applications system. 
 2. K8s’s principle is being declarative.  
 3. We can reluctantly think of K8s as a splitted and enhanced version’s docker compose.  

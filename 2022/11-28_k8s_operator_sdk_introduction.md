@@ -324,7 +324,7 @@ coolx-sample-pod   1/1     Running   0          111s
 
 
 
-## Take away
+## Takeaways 
 
 1. K8s uses an operator pattern for extending its capacity.
 2. Using operator-sdk simplifies our K8s operator development

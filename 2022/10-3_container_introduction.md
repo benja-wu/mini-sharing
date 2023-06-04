@@ -97,7 +97,7 @@ as we can see, with the default spec and system file bundle from the `busybox` e
 
 At last, we can see one simple terminal as usual
 
-## Take away
+## Takeaways
 
 1. Containers are isolated and restricted boxes for running processes
 2. Containers pack an app and all its dependencies (including OS libs) together

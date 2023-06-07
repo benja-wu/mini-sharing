@@ -1,6 +1,6 @@
 ## Background
 
-* As the software evolution procssing, codes change frequently.  
+* As the software evolves, codes change frequently. 
   
 * The idea of applying patterns to software design was inspired by the work of an architect, Christopher Alexander, who proposed the idea of using patterns to document good design practices. Alexander used patterns to solve problems in urban planning and building architecture, and his ideas were then adapted for software engineering by the Gang of Four.
   
@@ -12,7 +12,7 @@
 
 * We need to find a way for more reasonable way to change the exist code base for new features.
 
-* Ioslation code changing makes sure more reliable and less bugs during the developments.
+* Isolation code changing makes sure more reliable and less bugs during the developments.
 
 * The design patterns provide clear ways to handle complex interactions between objects, allowing developers to make changes with fewer unintended side effects, and making the code more robust, flexible, and maintainable.
 
